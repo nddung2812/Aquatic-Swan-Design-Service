@@ -1,5 +1,4 @@
 'use client'
-import { useState } from 'react';
 import ReactHowler from 'react-howler'
 import WaterWave from 'react-water-wave';
 import './page.css';
@@ -9,11 +8,7 @@ import Footer from './components/Footer';
 import HomeBanner from './components/HomeBanner';
 import { Preloader } from "./components/Preloader.jsx"
 
-export default function Home() {
-  const [isLoading, setIsLoading] = useState(true);
-  const handleLoadedData = () => {
-    setIsLoading(false);
-  };
+const Home = () => {
   return (
     <>
     <Preloader />
@@ -29,8 +24,7 @@ export default function Home() {
             autoPlay 
             muted 
             loop
-            onLoadedData={handleLoadedData}
-            style={{ display: isLoading ? "none" : "block" }} >
+            >
             <source src="https://znjf1ip6migqhqsx.public.blob.vercel-storage.com/Koifish-yTANtUJgMxz90jG7i5JvODHDj2RVQO.mp4" type="video/mp4" />
           </video>
           <ReactHowler src="https://znjf1ip6migqhqsx.public.blob.vercel-storage.com/BlueDream-3zIGmjQ2jnpCR09dSO0k2olRfYnEEO.mp3" playing={true} volume={0.5} loop={true}/>
@@ -44,3 +38,5 @@ export default function Home() {
     </>
   );
 }
+
+export default Home
