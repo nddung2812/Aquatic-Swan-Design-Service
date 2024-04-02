@@ -1,95 +1,46 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
+import { useState } from 'react';
+import ReactHowler from 'react-howler'
+import WaterWave from 'react-water-wave';
+import './page.css';
+import Navbar from './components/Navbar';
+import Duckweeds from './components/Duckweeds';
+import Footer from './components/Footer';
+import HomeBanner from './components/HomeBanner';
+import { Preloader } from "./components/Preloader.jsx"
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+  const handleLoadedData = () => {
+    setIsLoading(false);
+  };
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+    <Preloader />
+    <WaterWave
+      dropRadius={60}
+      perturbance={0.05}
+      interactive={true}
+      resolution={512}
+    >
+      {() => (
+        <div className="container">
+          <video 
+            autoPlay 
+            muted 
+            loop
+            onLoadedData={handleLoadedData}
+            style={{ display: isLoading ? "none" : "block" }} >
+            <source src="https://znjf1ip6migqhqsx.public.blob.vercel-storage.com/Koifish-yTANtUJgMxz90jG7i5JvODHDj2RVQO.mp4" type="video/mp4" />
+          </video>
+          <ReactHowler src="https://znjf1ip6migqhqsx.public.blob.vercel-storage.com/BlueDream-3zIGmjQ2jnpCR09dSO0k2olRfYnEEO.mp3" playing={true} volume={0.5} loop={true}/>
+          <Duckweeds />
+          <Navbar />
+          <HomeBanner />
+          <Footer />
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      )}
+    </WaterWave>
+    </>
   );
 }
