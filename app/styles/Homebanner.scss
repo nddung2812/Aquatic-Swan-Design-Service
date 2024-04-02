@@ -59,7 +59,11 @@
     margin: 1rem 1.5rem;
     padding: 1rem;
     border-radius: 4px;
-    min-width: 12rem;
+    min-width: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .cta-btn1 {
@@ -83,6 +87,10 @@
         width: 100%;
         text-align: center;
         margin: 14rem 0 4rem;
+        background: none;
+        border: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: blur( 0px );
     }
 
     .homebanner-ctn h1 {
@@ -106,5 +114,6 @@
 
     .cta-card {
         margin: 0.5rem 1rem;
+        min-width: 100%;
     }
 }

@@ -1,12 +1,13 @@
-.container {
+.home-page-container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background-color: rgba(26, 26, 26, 0.0901960784);
 }
 
-.container video {
+.home-page-container video {
   height: 100vh;
   width: 100vw;
   -o-object-fit: cover;
@@ -17,4 +18,10 @@
   top: 0;
   bottom: 0;
   z-index: -10;
+}
+
+@media (max-width: 768px) {
+  .home-page-container {
+    height: 100%;
+  }
 }/*# sourceMappingURL=page.css.map */

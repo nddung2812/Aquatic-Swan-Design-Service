@@ -29,7 +29,7 @@ const Home = () => {
       resolution={512}
     >
       {() => (
-        <div className="container">
+        <div className="home-page-container">
           <video 
             autoPlay 
             muted 
