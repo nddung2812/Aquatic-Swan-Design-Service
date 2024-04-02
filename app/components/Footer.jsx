@@ -23,15 +23,17 @@ const Footer = () => {
         </div>
       </div>
       <div className="footer-bottom-ctn">
-        <div className="footer-copyright">Copyright &copy; 2023 - Aquatic Swan Design</div>
-        <div className="footer-social-medias">
-          <h3><TfiYoutube /></h3>
-          <h3><TfiFacebook /></h3>
-          <h3><TfiInstagram /></h3>
-          <h3><TfiMusic /></h3>
-        </div>
-        <div className='footer-payment'>
-          <Image src={payment} alt="payment" />
+        <div className='subfooter'>
+          <div className="footer-copyright">Copyright &copy; 2023 - Aquatic Swan Design</div>
+          <div className="footer-social-medias">
+            <h3><TfiYoutube /></h3>
+            <h3><TfiFacebook /></h3>
+            <h3><TfiInstagram /></h3>
+            <h3><TfiMusic /></h3>
+          </div>
+          <div className='footer-payment'>
+            <Image src={payment} alt="payment" />
+          </div>
         </div>
       </div>
     </div>
