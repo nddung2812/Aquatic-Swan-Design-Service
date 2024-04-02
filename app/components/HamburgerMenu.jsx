@@ -1,3 +1,4 @@
+'use client'
 import '../styles/HamburgerMenu.css';
 import { useState } from 'react';
 
