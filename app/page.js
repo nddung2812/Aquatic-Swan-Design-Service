@@ -1,4 +1,9 @@
 'use client'
+import ReactHowler from 'react-howler'
+import './page.css';
+import Duckweeds from './components/Duckweeds';
+import Footer from './components/Footer';
+import HomeBanner from './components/HomeBanner';
 import { Preloader } from "./components/Preloader.jsx"
 import dynamic from 'next/dynamic'
 
@@ -7,12 +12,17 @@ const NavbarWithNoSSR = dynamic(
   { ssr: false }
 )
 
+const WaterWaveNoSSr = dynamic(
+  () => import('react-water-wave'),
+  { ssr: false }
+)
+
 const Home = () => {
 
   return (
     <>
     <Preloader />
-    {/* <WaterWave
+    <WaterWaveNoSSr
       dropRadius={60}
       perturbance={0.05}
       interactive={true}
@@ -34,7 +44,7 @@ const Home = () => {
           <Footer />
         </div>
       )}
-    </WaterWave> */}
+    </WaterWaveNoSSr>
     </>
   );
 }
