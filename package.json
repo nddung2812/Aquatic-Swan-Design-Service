@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/react-howler": "^5.2.3",
     "gsap": "^3.12.2",
     "next": "14.1.4",
     "react": "^18",
