@@ -1,3 +1,4 @@
+'use-client'
 import WaterWave from 'react-water-wave';
 import './page.css';
 import Navbar from './components/Navbar';
