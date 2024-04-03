@@ -31,9 +31,12 @@ const Home = () => {
       {() => (
         <div className="home-page-container">
           <video 
-            autoPlay 
-            muted 
-            loop
+            autoPlay="autoplay" 
+            muted
+            defaultMuted
+            playsInline 
+            loop="loop"
+            preload="auto"
             >
             <source src="https://znjf1ip6migqhqsx.public.blob.vercel-storage.com/Koifish-yTANtUJgMxz90jG7i5JvODHDj2RVQO.mp4" type="video/mp4" />
           </video>
