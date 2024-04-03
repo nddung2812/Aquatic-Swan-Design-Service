@@ -103,11 +103,10 @@
   }
   .homebanner-cta-ctn {
     flex-direction: column;
-    padding: 2rem 0rem;
-    width: 100%;
+    align-items: center;
   }
   .cta-card {
     margin: 0.5rem 1rem;
-    min-width: 100%;
+    width: 90vw;
   }
 }/*# sourceMappingURL=Homebanner.css.map */
